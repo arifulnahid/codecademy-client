@@ -5,7 +5,7 @@ import { UserContext } from '../../ContextAPI/AuthContext';
 import toast, { Toaster } from 'react-hot-toast';
 
 const Signup = () => {
-    const { googleSignIn, setUser, createUser, upDateUserData } = useContext(UserContext);
+    const { googleSignIn, githubSignIn, setUser, createUser, upDateUserData } = useContext(UserContext);
     const [error, setError] = useState("");
     const navigate = useNavigate();
     const notify = (s) => toast(s);
@@ -16,6 +16,15 @@ const Signup = () => {
                 const user = result.user;
                 setUser(user);
                 notify("Sucsess")
+                navigate("/");
+            }).catch(e => console.log(e))
+    }
+
+    const handleGithubSing = () => {
+        githubSignIn()
+            .then((result) => {
+                const user = result.user;
+                setUser(user);
                 navigate("/");
             }).catch(e => console.log(e))
     }
@@ -59,7 +68,7 @@ const Signup = () => {
             <div className='my-3 text-xl font-semibold text-center'>Alredy have account? <Link to="/login" className='font-bold'>Login here</Link></div>
             <div className='flex flex-col'>
                 <button onClick={() => handleGoogleSignIn()} className='text-xl font-bold my-1 mx-auto hover:bg-slate-600 rounded px-3 py-2'><FaGooglePlusSquare className='inline mx-2 text-3xl text-white'></FaGooglePlusSquare>Login in with <>Google</></button>
-                <button className='text-xl font-bold my-1 hover:bg-slate-600 rounded px-3 py-2'><FaGithubSquare className='inline mx-2 text-3xl text-white'></FaGithubSquare>Login in with <>Github</></button>
+                <button onClick={() => handleGithubSing()} className='text-xl font-bold my-1 hover:bg-slate-600 rounded px-3 py-2'><FaGithubSquare className='inline mx-2 text-3xl text-white'></FaGithubSquare>Login in with <>Github</></button>
             </div>
         </div>
     );

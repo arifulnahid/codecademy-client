@@ -1,0 +1,44 @@
+[
+    {
+        "id": 1,
+        "title": "Advanced Nodejs with Codecademy",
+        "thumbnail": "https://miro.medium.com/max/1400/1*ODU5V_oAmYmzvZ1wIw3rDw.png",
+        "fee": "5000",
+        "details": "Node.js is an open-source, cross-platform, back-end JavaScript runtime environment that runs on a JavaScript Engine (i.e. V8 engine) and executes JavaScript code outside a web browser, which was designed to build scalable network applications. Node.js lets developers use JavaScript to write command line tools and for server-side scripting—running scripts server-side to produce dynamic web page content before the page is sent to the user's web browser. Consequently, Node.js represents a JavaScript everywhere paradigm,[6] unifying web-application development around a single programming language, rather than different languages for server-side and client-side scripts."
+    },
+    {
+        "id": 2,
+        "title": "Advanced Javascript ES6 with Codecademy",
+        "thumbnail": "hhttps://res.cloudinary.com/practicaldev/image/fetch/s--mY622Qoc--/c_imagga_scale,f_auto,fl_progressive,h_900,q_auto,w_1600/https://dev-to-uploads.s3.amazonaws.com/i/398a310kjdiv647cld1y.jpg",
+        "fee": "4000",
+        "details": "JavaScript ES6 has some incredibly useful features that can make your code more modern and readable. In this article, I will go over some of the most essential features of ES6 so you too can write less and do more."
+    },
+    {
+        "id": 3,
+        "title": "Python Django with Codecademy",
+        "thumbnail": "https://assets.website-files.com/5b6901669b93d7837e36dc4c/615e1104ffbf5ae592265cc7_python-django.png",
+        "fee": "6000",
+        "details": "There are many different popularity rankings for programming languages. Developers often accuse these rankings of lack of precision, but each of the rankings includes Python within the top 5 for a reason. Python is an interpretive programming language. It's easy-to-memorize with good quality documentation. With Python, a developer only needs a few lines of code to craft basic application functionality and can make use of a large library of packages and module to build applications. All that combined provides increased productivity — and this is why programmers fall in love with Python."
+    },
+    {
+        "id": 4,
+        "title": "Advanced Javascript ExpressJS with Codecademy",
+        "thumbnail": "https://i.ytimg.com/vi/Oe421EPjeBE/maxresdefault.jpg",
+        "fee": "5000",
+        "details": "In my quest to become a well rounded and up to date Full-Stack Web Developer I started to dive into Node.js. For those readers who are not familiar with Node.js it is an open source server environment that can run various platforms (Windows, Mac OS, Unix, Linux, etc.) and it uses Javascript to create servers. Other common server side languages are Python, Ruby, Java, PHP among many others."
+    },
+    {
+        "id": 5,
+        "title": "MERN Development with Codecademy",
+        "thumbnail": "https://www.rlogical.com/wp-content/uploads/2020/12/MERN-Stack-considered-the-Best-for-Developing-Web-Apps.png",
+        "fee": "8000",
+        "details": "ERN stack is an assortment of rugged and robust technologies for developing scalable Web apps, which consist of front-end, back-end, and database components. This particular tech stack happens to be a user-friendly JavaScript framework intended for creating dynamic applications and websites. For this reason, it is considered to be a preferred platform for startups."
+    },
+    {
+        "id": 6,
+        "title": "Competetive Programing with Codecademy",
+        "thumbnail": "https://csharpcorner-mindcrackerinc.netdna-ssl.com/article/what-is-competitive-programming-and-why-it-is-importantcontests/Images/Top-10-Programming-Languages-to-Watch-Out-in-2019.png",
+        "fee": "9000",
+        "details": "Competitive programming is a mind sport usually held over the Internet or a local network, involving participants trying to program according to provided specifications. … A programming competition generally involves the host presenting a set of logical or mathematical problems to the contestants … [who] are required to write computer programs capable of solving each problem. Judging is based mostly upon number of problems solved and time spent for writing successful solutions, but may also include other factors."
+    }
+]
