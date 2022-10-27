@@ -1,7 +1,7 @@
-#Codecademy
+Codecademy
 
-LiveFirebase: https://codecademy-c4a96.web.app/
-Server: https://codecaedmy.vercel.app/course
+#LiveFirebase: https://codecademy-c4a96.web.app/
+#Server: https://codecaedmy.vercel.app/course
 
 Css Framework: 
 Tailwindcss 
