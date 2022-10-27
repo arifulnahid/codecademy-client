@@ -1,38 +1,107 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { FaCentercode, FaUserCircle, FaBars } from 'react-icons/fa';
+import { Link, NavLink } from 'react-router-dom';
+import { UserContext } from '../../ContextAPI/AuthContext';
 
 const Header = () => {
-    return (
-        <div data-theme="dark">
-            <div className="navbar bg-base-100">
-                <div className="flex-1">
-                    <a className="btn btn-ghost normal-case text-xl">Cloudcademy</a>
-                </div>
-                <div className="flex-none gap-2">
-                    <div className="form-control">
-                        <input type="checkbox" className="toggle toggle-primary" />
-                    </div>
+    const { user, userSignOut } = useContext(UserContext);
+    // console.log(user);
 
-                    <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="https://placeimg.com/80/80/people" />
+    const signOutHandler = () => {
+        userSignOut().then(() => {
+            console.log("Sign - out successful.");
+        }).catch((error) => {
+            console.log(error, "An error happened");
+        });
+    }
+
+
+    return (
+        <nav className='flex justify-between items-center py-3 lg:px-14  bg-slate-400'>
+            <div className='flex justify-center items-center'>
+                <NavLink to="/"><FaCentercode className="text-3xl text-white mx-5"></FaCentercode></NavLink>
+                <NavLink to="/" className='text-3xl font-bold text-white'>Codecademy</NavLink>
+            </div>
+
+            <div className=''>
+                <div className="lg:hidden visible">
+                    {
+                        user ?
+                            <div className="dropdown dropdown-end">
+                                <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        {
+                                            user?.photoURL ?
+                                                <img src={user?.photoURL} />
+                                                :
+                                                <FaUserCircle className='text-3xl text-white'></FaUserCircle>
+                                        }
+                                    </div>
+                                </label>
+                                <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                                    <li>
+                                        <Link to="/profile" className="justify-between">
+                                            Profile
+                                            <span className="badge">New</span>
+                                        </Link>
+                                    </li>
+                                    <li><Link>Settings</Link></li>
+                                    <li><button onClick={() => signOutHandler()}>Logout</button></li>
+                                </ul>
                             </div>
-                        </label>
-                        <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-                                    <span className="badge">New</span>
-                                </a>
-                            </li>
-                            <li><a>Settings</a></li>
-                            <li><a>Logout</a></li>
-                            <li><input type="checkbox" className="toggle toggle-primary ml-3" /></li>
-                        </ul>
-                    </div>
+                            :
+                            <>
+                                <Link to="/login" className="text-xl font-bold text-white mx-2" to="/login" >Login</Link>
+                                <Link to="/signup" className="text-xl font-bold text-white mx-2" to="/signup" >Signup</Link>
+                            </>
+                    }
+                </div>
+
+                <div className='hidden lg:block'>
+                    {
+                        user ?
+                            <>
+                                {
+                                    user ?
+                                        <div className="dropdown dropdown-end">
+                                            <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
+                                                <div className="w-10 rounded-full">
+                                                    {
+                                                        user?.photoURL ?
+                                                            <img src={user?.photoURL} />
+                                                            :
+                                                            <FaUserCircle className='text-3xl text-white'></FaUserCircle>
+                                                    }
+                                                </div>
+                                            </label>
+                                            <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
+                                                <li>
+                                                    <Link to="/profile" className="justify-between">
+                                                        Profile
+                                                        <span className="badge">New</span>
+                                                    </Link>
+                                                </li>
+                                                <li><Link>Settings</Link></li>
+                                                <li><button onClick={() => signOutHandler()}>Logout</button></li>
+                                            </ul>
+                                        </div>
+                                        :
+                                        <>
+                                            <Link to="/login" className="text-xl font-bold text-white mx-2" to="/login" >Login</Link>
+                                            <Link to="/signup" className="text-xl font-bold text-white mx-2" to="/signup" >Signup</Link>
+                                        </>
+                                }
+                            </>
+
+                            :
+                            <>
+                                <Link to="/login" className="text-xl font-bold text-white mx-2" to="/login" >Login</Link>
+                                <Link to="/signup" className="text-xl font-bold text-white mx-2" to="/signup" >Signup</Link>
+                            </>
+                    }
                 </div>
             </div>
-        </div>
+        </nav>
     );
 };
 
